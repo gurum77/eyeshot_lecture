@@ -1,5 +1,6 @@
 ﻿using devDept.Eyeshot;
 using devDept.Eyeshot.Entities;
+using devDept.Eyeshot.Translators;
 using devDept.Geometry;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,16 @@ namespace eyeshot강의
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            model1.WorkCompleted += Model1_WorkCompleted;
+        }
 
+        private void Model1_WorkCompleted(object sender, WorkCompletedEventArgs e)
+        {
+            if(e.WorkUnit is ReadFile)
+            {
+                ReadFile rf = e.WorkUnit as ReadFile;
+                rf.AddToScene(model1);
+            }
         }
 
         #region mesh 그리기 메뉴
@@ -127,17 +137,51 @@ namespace eyeshot강의
 
         private void eye가져오기ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // 파일 선택
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.DefaultExt = "eye";
             if(dlg.ShowDialog() == DialogResult.OK)
             {
+                // 파일 읽기 클래스 생성
                 devDept.Eyeshot.Translators.ReadFile rf = new devDept.Eyeshot.Translators.ReadFile(dlg.FileName);
-                rf.DoWork();
 
-                model1.Entities.AddRange(rf.Entities);
-                
-                model1.ZoomFit();
+                // 파일 읽기 시작
+                model1.StartWork(rf);
             }
         }
+        #region 객체 편집
+        private void 이동ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // 객체 생성
+            var arrow = Mesh.CreateArrow(5, 50, 10, 15, 16, Mesh.natureType.Smooth);
+
+            // 객체 이동
+            arrow.Translate(30, 30, 0);
+
+            // 객체 추가
+            model1.Entities.Add(arrow, Color.GreenYellow);
+
+            // zoom fit
+            model1.ZoomFit();
+
+            // 화면 갱신
+            model1.Invalidate();
+        }
+
+        private void 회전ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 확대ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 이동회전확대조합ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
     }
 }
