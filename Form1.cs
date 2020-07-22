@@ -1,4 +1,5 @@
-﻿using devDept.Eyeshot.Entities;
+﻿using devDept.Eyeshot;
+using devDept.Eyeshot.Entities;
 using devDept.Geometry;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace eyeshot강의
 
         }
 
+        #region mesh 그리기 메뉴
         private void boxToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             // box 형태의 mesh를 생성
@@ -78,9 +80,8 @@ namespace eyeshot강의
 
             // planar 형태의 mesh를 생성
             var cone = Mesh.CreatePlanar(points, Mesh.natureType.Plain);
-
             // mesh를 master entity collection에 추가
-            model1.Entities.Add(cone, Color.Purple);
+            model1.Entities.Add(cone, Color.Green);
             // zoom fit
             model1.ZoomFit();
             // viewport 갱신
@@ -89,17 +90,54 @@ namespace eyeshot강의
 
         private void sphereToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            // sphere 형태의 mesh를 생성
+            var sphere = Mesh.CreateSphere(20, 30, 5);
+            // mesh를 master entity collection에 추가
+            model1.Entities.Add(sphere, Color.SkyBlue);
+            // zoom fit
+            model1.ZoomFit();
+            // viewport 갱신
+            model1.Invalidate();
         }
 
         private void springToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            // spring 형태의 mesh를 생성
+            var spring = Mesh.CreateSpring(30, 4, 10, 5, 10, 3, false);
+            // mesh를 master entity collection에 추가
+            model1.Entities.Add(spring, Color.DarkGoldenrod);
+            // zoom fit
+            model1.ZoomFit();
+            // viewport 갱신
+            model1.Invalidate();
         }
 
         private void torusToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // torus 형태의 mesh를 생성
+            var torus = Mesh.CreateTorus(30, 5, 30, 10);
+            // mesh를 master entity collection에 추가
+            model1.Entities.Add(torus, Color.Cyan);
+            // zoom fit
+            model1.ZoomFit();
+            // viewport 갱신
+            model1.Invalidate();
+        }
+        #endregion
 
+        private void eye가져오기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.DefaultExt = "eye";
+            if(dlg.ShowDialog() == DialogResult.OK)
+            {
+                devDept.Eyeshot.Translators.ReadFile rf = new devDept.Eyeshot.Translators.ReadFile(dlg.FileName);
+                rf.DoWork();
+
+                model1.Entities.AddRange(rf.Entities);
+                
+                model1.ZoomFit();
+            }
         }
     }
 }
