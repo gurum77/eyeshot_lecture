@@ -5,6 +5,7 @@ using devDept.Geometry;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -220,6 +221,96 @@ namespace eyeshot강의
             model1.ZoomFit();
             model1.Invalidate();
         }
+        #endregion
+        #region 객체의 속성 변경
+
+        private void byLayerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // layer 색으로 설정
+            foreach (var ent in model1.Entities)
+            {
+                ent.ColorMethod = colorMethodType.byLayer;
+            }
+            model1.Invalidate();
+        }
+
+        private void byEntityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog dlg = new ColorDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                // 모든 객체의 색을 변경
+                foreach (var ent in model1.Entities)
+                {
+                    ent.Color = dlg.Color;
+                    ent.ColorMethod = colorMethodType.byEntity;
+                }
+                model1.Invalidate();
+            }
+        }
+
+        private void layer색변경ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog dlg = new ColorDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                // 첫번째 layer의 색을 변경
+                model1.Layers[0].Color = dlg.Color;
+            }
+        }
+  
+
+        private void layer목록조회ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (var layer in model1.Layers)
+                sb.Append($"{layer.Name}, {layer.Color.ToString()}\n");
+            MessageBox.Show(sb.ToString());
+        }
+
+        private void layer추가ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // layer 이름 결정
+            string layerName = $"Layer{model1.Layers.Count+1}";
+
+            // layer 색상 선택
+            var dlg = new ColorDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                model1.Layers.Add(layerName, dlg.Color);
+            }
+        }
+
+        // 알파 0
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            foreach(var ent in model1.Entities)
+            {
+                ent.Color = Color.FromArgb(0, ent.Color);
+            }
+            model1.Invalidate();
+        }
+
+        // 알파 100
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            foreach (var ent in model1.Entities)
+            {
+                ent.Color = Color.FromArgb(100, ent.Color);
+            }
+            model1.Invalidate();
+        }
+
+        // 알파 255
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            foreach (var ent in model1.Entities)
+            {
+                ent.Color = Color.FromArgb(255, ent.Color);
+            }
+            model1.Invalidate();
+        }
+
         #endregion
     }
 }
