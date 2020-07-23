@@ -5,6 +5,7 @@ using devDept.Geometry;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace eyeshot강의
@@ -170,17 +171,54 @@ namespace eyeshot강의
 
         private void 회전ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // 객체 생성
+            var arrow = Mesh.CreateArrow(5, 50, 10, 15, 16, Mesh.natureType.Smooth);
 
+            // 객체 이동
+            arrow.Rotate(45.0f / 180.0f * Math.PI, new Vector3D(0, 0, 1));
+
+            // 객체 추가
+            model1.Entities.Add(arrow, Color.GreenYellow);
+
+            // zoom fit
+            model1.ZoomFit();
+
+            // 화면 갱신
+            model1.Invalidate();
         }
 
         private void 확대ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            // 객체 생성
+            var arrow = Mesh.CreateArrow(5, 50, 10, 15, 16, Mesh.natureType.Smooth);
+            // 객체 확대
+            arrow.Scale(2);
+            // 객체 추가
+            model1.Entities.Add(arrow, Color.GreenYellow);
+            // zoom fit
+            model1.ZoomFit();
+            // 화면 갱신
+            model1.Invalidate();
         }
 
         private void 이동회전확대조합ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            // 객체 생성
+            var arrow = Mesh.CreateArrow(5, 50, 10, 15, 16, Mesh.natureType.Smooth);
+            // 객체 편집(변형) 정보
+            double rad = Utility.DegToRad(90);
+            Rotation rotation = new Rotation(rad, new Vector3D(0, 0, 1), new Point3D(0, 0, 0));  // 회전
+            Translation translation = new Translation(10, 10, 0);   // 이동
+            Scaling scaling = new Scaling(2);   // 확대
+            // 조합
+            Transformation trans = new Transformation();
+            trans = rotation * translation * scaling;
+            // 객체 편집(변형)
+            arrow.TransformBy(trans);
+            // 객체를 추가하고 화면 갱신
+            model1.Entities.Add(arrow, Color.GreenYellow);
+            model1.ZoomFit();
+            model1.Invalidate();
         }
         #endregion
     }
