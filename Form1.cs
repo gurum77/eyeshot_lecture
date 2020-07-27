@@ -714,9 +714,7 @@ namespace eyeshot강의
         {
             model1.ClippingPlane1.Apply();
             model1.ClippingPlane2.Apply();
-
-
-
+            model1.Invalidate();
         }
 
         private void 충돌체크ToolStripMenuItem_Click(object sender, EventArgs e)
