@@ -734,5 +734,23 @@ namespace eyeshot강의
             }
             model1.Invalidate();
         }
+
+        private void ellipsoidToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SurfaceCreator sc = new SurfaceCreator();
+            sc.CreateEllipsoid(model1);
+        }
+
+        private void planarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SurfaceCreator sc = new SurfaceCreator();
+            sc.CreateLoft(model1);
+        }
+
+        private void extrudeWithTwistToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SurfaceCreator sc = new SurfaceCreator();
+            sc.CreateExtrudeWithTwist(model1);
+        }
     }
 }

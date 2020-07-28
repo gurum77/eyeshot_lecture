@@ -70,6 +70,7 @@
     <Compile Include="RegionCreator.cs" />
     <Compile Include="RegionToMesh.cs" />
     <Compile Include="Shapes.cs" />
+    <Compile Include="SurfaceCreator.cs" />
     <Compile Include="TextureMappingManager.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
