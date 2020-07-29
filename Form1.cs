@@ -752,5 +752,31 @@ namespace eyeshot강의
             SurfaceCreator sc = new SurfaceCreator();
             sc.CreateExtrudeWithTwist(model1);
         }
+
+        private void volumeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BrepChecker bc = new BrepChecker();
+            bc.CalcVolumes(model1);
+        }
+
+        private void edge추출ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BrepChecker bc = new BrepChecker();
+            bc.GetEdges(model1);
+        }
+
+        private void cylinderFace선택ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // 실린더 형태의 face 선택
+            BrepChecker bc = new BrepChecker();
+            bc.SelectCylinderFaces(model1);
+        }
+
+        private void coneFace선택ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // 콘 형태의 face 선택
+            BrepChecker bc = new BrepChecker();
+            bc.SelectConeFaces(model1);
+        }
     }
 }
