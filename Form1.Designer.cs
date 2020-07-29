@@ -28,64 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
-            devDept.Eyeshot.CancelToolBarButton cancelToolBarButton6 = new devDept.Eyeshot.CancelToolBarButton("Cancel", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
-            devDept.Eyeshot.ProgressBar progressBar6 = new devDept.Eyeshot.ProgressBar(devDept.Eyeshot.ProgressBar.styleType.Circular, 0, "Idle", System.Drawing.Color.Black, System.Drawing.Color.Transparent, System.Drawing.Color.Red, 1D, true, cancelToolBarButton6, false, 0.2D, true);
-            devDept.Graphics.BackgroundSettings backgroundSettings11 = new devDept.Graphics.BackgroundSettings(devDept.Graphics.backgroundStyleType.LinearGradient, System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245))))), System.Drawing.Color.DodgerBlue, System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(210))))), 0.75D, null, devDept.Graphics.colorThemeType.Auto, 0.33D);
-            devDept.Eyeshot.Camera camera11 = new devDept.Eyeshot.Camera(new devDept.Geometry.Point3D(0D, 0D, 45D), 380D, new devDept.Geometry.Quaternion(0.018434349666532526D, 0.039532590434972079D, 0.42221602280006187D, 0.90544518284475428D), devDept.Graphics.projectionType.Perspective, 40D, 4.1299999416891362D, false, 0.001D);
-            devDept.Eyeshot.HomeToolBarButton homeToolBarButton6 = new devDept.Eyeshot.HomeToolBarButton("Home", devDept.Eyeshot.ToolBarButton.styleType.PushButton, true, true);
-            devDept.Eyeshot.MagnifyingGlassToolBarButton magnifyingGlassToolBarButton11 = new devDept.Eyeshot.MagnifyingGlassToolBarButton("Magnifying Glass", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
-            devDept.Eyeshot.ZoomWindowToolBarButton zoomWindowToolBarButton11 = new devDept.Eyeshot.ZoomWindowToolBarButton("Zoom Window", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
-            devDept.Eyeshot.ZoomToolBarButton zoomToolBarButton11 = new devDept.Eyeshot.ZoomToolBarButton("Zoom", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
-            devDept.Eyeshot.PanToolBarButton panToolBarButton11 = new devDept.Eyeshot.PanToolBarButton("Pan", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
-            devDept.Eyeshot.RotateToolBarButton rotateToolBarButton6 = new devDept.Eyeshot.RotateToolBarButton("Rotate", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
-            devDept.Eyeshot.ZoomFitToolBarButton zoomFitToolBarButton11 = new devDept.Eyeshot.ZoomFitToolBarButton("Zoom Fit", devDept.Eyeshot.ToolBarButton.styleType.PushButton, true, true);
-            devDept.Eyeshot.ToolBar toolBar11 = new devDept.Eyeshot.ToolBar(devDept.Eyeshot.ToolBar.positionType.HorizontalTopCenter, true, new devDept.Eyeshot.ToolBarButton[] {
-            ((devDept.Eyeshot.ToolBarButton)(homeToolBarButton6)),
-            ((devDept.Eyeshot.ToolBarButton)(magnifyingGlassToolBarButton11)),
-            ((devDept.Eyeshot.ToolBarButton)(zoomWindowToolBarButton11)),
-            ((devDept.Eyeshot.ToolBarButton)(zoomToolBarButton11)),
-            ((devDept.Eyeshot.ToolBarButton)(panToolBarButton11)),
-            ((devDept.Eyeshot.ToolBarButton)(rotateToolBarButton6)),
-            ((devDept.Eyeshot.ToolBarButton)(zoomFitToolBarButton11))});
-            devDept.Eyeshot.Grid grid11 = new devDept.Eyeshot.Grid(new devDept.Geometry.Point3D(-100D, -100D, 0D), new devDept.Geometry.Point3D(100D, 100D, 0D), 10D, new devDept.Geometry.Plane(new devDept.Geometry.Point3D(0D, 0D, 0D), new devDept.Geometry.Vector3D(0D, 0D, 1D)), System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128))))), System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))), System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), false, true, false, false, 10, 100, 10, System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90))))), System.Drawing.Color.Transparent, false, System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255))))));
-            devDept.Eyeshot.OriginSymbol originSymbol11 = new devDept.Eyeshot.OriginSymbol(10, devDept.Eyeshot.originSymbolStyleType.Ball, System.Drawing.Color.Black, System.Drawing.Color.Red, System.Drawing.Color.Green, System.Drawing.Color.Blue, "Origin", "X", "Y", "Z", true, null, false);
-            devDept.Eyeshot.RotateSettings rotateSettings11 = new devDept.Eyeshot.RotateSettings(new devDept.Eyeshot.MouseButton(devDept.Eyeshot.mouseButtonsZPR.Middle, devDept.Eyeshot.modifierKeys.None), 10D, true, 1D, devDept.Eyeshot.rotationType.Trackball, devDept.Eyeshot.rotationCenterType.CursorLocation, new devDept.Geometry.Point3D(0D, 0D, 0D), false);
-            devDept.Eyeshot.ZoomSettings zoomSettings11 = new devDept.Eyeshot.ZoomSettings(new devDept.Eyeshot.MouseButton(devDept.Eyeshot.mouseButtonsZPR.Middle, devDept.Eyeshot.modifierKeys.Shift), 25, true, devDept.Eyeshot.zoomStyleType.AtCursorLocation, false, 1D, System.Drawing.Color.Empty, devDept.Eyeshot.Camera.perspectiveFitType.Accurate, false, 10, true);
-            devDept.Eyeshot.PanSettings panSettings11 = new devDept.Eyeshot.PanSettings(new devDept.Eyeshot.MouseButton(devDept.Eyeshot.mouseButtonsZPR.Middle, devDept.Eyeshot.modifierKeys.Ctrl), 25, true);
-            devDept.Eyeshot.NavigationSettings navigationSettings11 = new devDept.Eyeshot.NavigationSettings(devDept.Eyeshot.Camera.navigationType.Examine, new devDept.Eyeshot.MouseButton(devDept.Eyeshot.mouseButtonsZPR.Left, devDept.Eyeshot.modifierKeys.None), new devDept.Geometry.Point3D(-1000D, -1000D, -1000D), new devDept.Geometry.Point3D(1000D, 1000D, 1000D), 8D, 50D, 50D);
-            devDept.Eyeshot.Viewport.SavedViewsManager savedViewsManager11 = new devDept.Eyeshot.Viewport.SavedViewsManager(8);
-            devDept.Eyeshot.Viewport viewport11 = new devDept.Eyeshot.Viewport(new System.Drawing.Point(0, 0), new System.Drawing.Size(520, 413), backgroundSettings11, camera11, new devDept.Eyeshot.ToolBar[] {
-            toolBar11}, devDept.Eyeshot.displayType.Rendered, true, false, false, false, new devDept.Eyeshot.Grid[] {
-            grid11}, new devDept.Eyeshot.OriginSymbol[] {
-            originSymbol11}, false, rotateSettings11, zoomSettings11, panSettings11, navigationSettings11, savedViewsManager11, devDept.Eyeshot.viewType.Trimetric);
-            devDept.Eyeshot.CoordinateSystemIcon coordinateSystemIcon11 = new devDept.Eyeshot.CoordinateSystemIcon(System.Drawing.Color.Black, System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80))))), System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80))))), System.Drawing.Color.OrangeRed, "Origin", "X", "Y", "Z", true, devDept.Eyeshot.coordinateSystemPositionType.BottomLeft, 37, false);
-            devDept.Eyeshot.ViewCubeIcon viewCubeIcon11 = new devDept.Eyeshot.ViewCubeIcon(devDept.Eyeshot.coordinateSystemPositionType.TopRight, true, System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(144)))), ((int)(((byte)(255))))), true, "FRONT", "BACK", "LEFT", "RIGHT", "TOP", "BOTTOM", System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), 'S', 'N', 'W', 'E', true, System.Drawing.Color.White, System.Drawing.Color.Black, 120, true, true, null, null, null, null, null, null, false);
-            devDept.Graphics.BackgroundSettings backgroundSettings12 = new devDept.Graphics.BackgroundSettings(devDept.Graphics.backgroundStyleType.Solid, System.Drawing.Color.DeepSkyBlue, System.Drawing.Color.DodgerBlue, System.Drawing.Color.Gainsboro, 0.75D, null, devDept.Graphics.colorThemeType.Auto, 0.33D);
-            devDept.Eyeshot.Camera camera12 = new devDept.Eyeshot.Camera(new devDept.Geometry.Point3D(-4.5374030325107811E-16D, 2.0434646606445304D, 47.596564948558793D), 97.257904648780823D, new devDept.Geometry.Quaternion(0.49999999999999989D, 0.5D, 0.5D, 0.50000000000000011D), devDept.Graphics.projectionType.Orthographic, 40D, 1.4616467533108335D, false, 0.001D);
-            devDept.Eyeshot.MagnifyingGlassToolBarButton magnifyingGlassToolBarButton12 = new devDept.Eyeshot.MagnifyingGlassToolBarButton("Magnifying Glass", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
-            devDept.Eyeshot.ZoomWindowToolBarButton zoomWindowToolBarButton12 = new devDept.Eyeshot.ZoomWindowToolBarButton("Zoom Window", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
-            devDept.Eyeshot.ZoomToolBarButton zoomToolBarButton12 = new devDept.Eyeshot.ZoomToolBarButton("Zoom", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
-            devDept.Eyeshot.PanToolBarButton panToolBarButton12 = new devDept.Eyeshot.PanToolBarButton("Pan", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
-            devDept.Eyeshot.ZoomFitToolBarButton zoomFitToolBarButton12 = new devDept.Eyeshot.ZoomFitToolBarButton("Zoom Fit", devDept.Eyeshot.ToolBarButton.styleType.PushButton, true, true);
-            devDept.Eyeshot.ToolBar toolBar12 = new devDept.Eyeshot.ToolBar(devDept.Eyeshot.ToolBar.positionType.HorizontalTopCenter, true, new devDept.Eyeshot.ToolBarButton[] {
-            ((devDept.Eyeshot.ToolBarButton)(magnifyingGlassToolBarButton12)),
-            ((devDept.Eyeshot.ToolBarButton)(zoomWindowToolBarButton12)),
-            ((devDept.Eyeshot.ToolBarButton)(zoomToolBarButton12)),
-            ((devDept.Eyeshot.ToolBarButton)(panToolBarButton12)),
-            ((devDept.Eyeshot.ToolBarButton)(zoomFitToolBarButton12))});
-            devDept.Eyeshot.Grid grid12 = new devDept.Eyeshot.Grid(new devDept.Geometry.Point3D(-100D, -100D, 0D), new devDept.Geometry.Point3D(100D, 100D, 0D), 5D, new devDept.Geometry.Plane(new devDept.Geometry.Point3D(0D, 0D, 0D), new devDept.Geometry.Vector3D(0D, 0D, 1D)), System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128))))), System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))), System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), false, false, false, false, 10, 100, 10, System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90))))), System.Drawing.Color.Transparent, false, System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255))))));
-            devDept.Eyeshot.OriginSymbol originSymbol12 = new devDept.Eyeshot.OriginSymbol(10, devDept.Eyeshot.originSymbolStyleType.Ball, System.Drawing.Color.Black, System.Drawing.Color.Red, System.Drawing.Color.Green, System.Drawing.Color.Blue, "Origin", "X", "Y", "Z", true, null, false);
-            devDept.Eyeshot.RotateSettings rotateSettings12 = new devDept.Eyeshot.RotateSettings(new devDept.Eyeshot.MouseButton(devDept.Eyeshot.mouseButtonsZPR.Middle, devDept.Eyeshot.modifierKeys.None), 10D, false, 1D, devDept.Eyeshot.rotationType.Trackball, devDept.Eyeshot.rotationCenterType.CursorLocation, new devDept.Geometry.Point3D(0D, 0D, 0D), false);
-            devDept.Eyeshot.ZoomSettings zoomSettings12 = new devDept.Eyeshot.ZoomSettings(new devDept.Eyeshot.MouseButton(devDept.Eyeshot.mouseButtonsZPR.Middle, devDept.Eyeshot.modifierKeys.Shift), 25, true, devDept.Eyeshot.zoomStyleType.AtCursorLocation, false, 1D, System.Drawing.Color.Empty, devDept.Eyeshot.Camera.perspectiveFitType.Accurate, false, 10, true);
-            devDept.Eyeshot.PanSettings panSettings12 = new devDept.Eyeshot.PanSettings(new devDept.Eyeshot.MouseButton(devDept.Eyeshot.mouseButtonsZPR.Middle, devDept.Eyeshot.modifierKeys.Ctrl), 25, true);
-            devDept.Eyeshot.NavigationSettings navigationSettings12 = new devDept.Eyeshot.NavigationSettings(devDept.Eyeshot.Camera.navigationType.Examine, new devDept.Eyeshot.MouseButton(devDept.Eyeshot.mouseButtonsZPR.Left, devDept.Eyeshot.modifierKeys.None), new devDept.Geometry.Point3D(-1000D, -1000D, -1000D), new devDept.Geometry.Point3D(1000D, 1000D, 1000D), 8D, 50D, 50D);
-            devDept.Eyeshot.Viewport.SavedViewsManager savedViewsManager12 = new devDept.Eyeshot.Viewport.SavedViewsManager(8);
-            devDept.Eyeshot.Viewport viewport12 = new devDept.Eyeshot.Viewport(new System.Drawing.Point(524, 0), new System.Drawing.Size(520, 413), backgroundSettings12, camera12, new devDept.Eyeshot.ToolBar[] {
-            toolBar12}, devDept.Eyeshot.displayType.Shaded, true, false, false, false, new devDept.Eyeshot.Grid[] {
-            grid12}, new devDept.Eyeshot.OriginSymbol[] {
-            originSymbol12}, false, rotateSettings12, zoomSettings12, panSettings12, navigationSettings12, savedViewsManager12, devDept.Eyeshot.viewType.Top);
-            devDept.Eyeshot.CoordinateSystemIcon coordinateSystemIcon12 = new devDept.Eyeshot.CoordinateSystemIcon(System.Drawing.Color.Black, System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80))))), System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80))))), System.Drawing.Color.OrangeRed, "Origin", "X", "Y", "Z", true, devDept.Eyeshot.coordinateSystemPositionType.BottomLeft, 37, false);
-            devDept.Eyeshot.ViewCubeIcon viewCubeIcon12 = new devDept.Eyeshot.ViewCubeIcon(devDept.Eyeshot.coordinateSystemPositionType.TopRight, false, System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(144)))), ((int)(((byte)(255))))), true, "FRONT", "BACK", "LEFT", "RIGHT", "TOP", "BOTTOM", System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), 'S', 'N', 'W', 'E', true, System.Drawing.Color.White, System.Drawing.Color.Black, 120, true, true, null, null, null, null, null, null, false);
+            devDept.Eyeshot.CancelToolBarButton cancelToolBarButton4 = new devDept.Eyeshot.CancelToolBarButton("Cancel", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
+            devDept.Eyeshot.ProgressBar progressBar4 = new devDept.Eyeshot.ProgressBar(devDept.Eyeshot.ProgressBar.styleType.Circular, 0, "Idle", System.Drawing.Color.Black, System.Drawing.Color.Transparent, System.Drawing.Color.Red, 1D, true, cancelToolBarButton4, false, 0.2D, true);
+            devDept.Graphics.BackgroundSettings backgroundSettings7 = new devDept.Graphics.BackgroundSettings(devDept.Graphics.backgroundStyleType.LinearGradient, System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245))))), System.Drawing.Color.DodgerBlue, System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(210))))), 0.75D, null, devDept.Graphics.colorThemeType.Auto, 0.33D);
+            devDept.Eyeshot.Camera camera7 = new devDept.Eyeshot.Camera(new devDept.Geometry.Point3D(0D, 0D, 45D), 380D, new devDept.Geometry.Quaternion(0.018434349666532526D, 0.039532590434972079D, 0.42221602280006187D, 0.90544518284475428D), devDept.Graphics.projectionType.Perspective, 40D, 5.2199998801406409D, false, 0.001D);
+            devDept.Eyeshot.HomeToolBarButton homeToolBarButton4 = new devDept.Eyeshot.HomeToolBarButton("Home", devDept.Eyeshot.ToolBarButton.styleType.PushButton, true, true);
+            devDept.Eyeshot.MagnifyingGlassToolBarButton magnifyingGlassToolBarButton7 = new devDept.Eyeshot.MagnifyingGlassToolBarButton("Magnifying Glass", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
+            devDept.Eyeshot.ZoomWindowToolBarButton zoomWindowToolBarButton7 = new devDept.Eyeshot.ZoomWindowToolBarButton("Zoom Window", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
+            devDept.Eyeshot.ZoomToolBarButton zoomToolBarButton7 = new devDept.Eyeshot.ZoomToolBarButton("Zoom", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
+            devDept.Eyeshot.PanToolBarButton panToolBarButton7 = new devDept.Eyeshot.PanToolBarButton("Pan", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
+            devDept.Eyeshot.RotateToolBarButton rotateToolBarButton4 = new devDept.Eyeshot.RotateToolBarButton("Rotate", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
+            devDept.Eyeshot.ZoomFitToolBarButton zoomFitToolBarButton7 = new devDept.Eyeshot.ZoomFitToolBarButton("Zoom Fit", devDept.Eyeshot.ToolBarButton.styleType.PushButton, true, true);
+            devDept.Eyeshot.ToolBar toolBar7 = new devDept.Eyeshot.ToolBar(devDept.Eyeshot.ToolBar.positionType.HorizontalTopCenter, true, new devDept.Eyeshot.ToolBarButton[] {
+            ((devDept.Eyeshot.ToolBarButton)(homeToolBarButton4)),
+            ((devDept.Eyeshot.ToolBarButton)(magnifyingGlassToolBarButton7)),
+            ((devDept.Eyeshot.ToolBarButton)(zoomWindowToolBarButton7)),
+            ((devDept.Eyeshot.ToolBarButton)(zoomToolBarButton7)),
+            ((devDept.Eyeshot.ToolBarButton)(panToolBarButton7)),
+            ((devDept.Eyeshot.ToolBarButton)(rotateToolBarButton4)),
+            ((devDept.Eyeshot.ToolBarButton)(zoomFitToolBarButton7))});
+            devDept.Eyeshot.Grid grid7 = new devDept.Eyeshot.Grid(new devDept.Geometry.Point3D(-100D, -100D, 0D), new devDept.Geometry.Point3D(100D, 100D, 0D), 10D, new devDept.Geometry.Plane(new devDept.Geometry.Point3D(0D, 0D, 0D), new devDept.Geometry.Vector3D(0D, 0D, 1D)), System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128))))), System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))), System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), false, true, false, false, 10, 100, 10, System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90))))), System.Drawing.Color.Transparent, false, System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255))))));
+            devDept.Eyeshot.OriginSymbol originSymbol7 = new devDept.Eyeshot.OriginSymbol(10, devDept.Eyeshot.originSymbolStyleType.Ball, System.Drawing.Color.Black, System.Drawing.Color.Red, System.Drawing.Color.Green, System.Drawing.Color.Blue, "Origin", "X", "Y", "Z", true, null, false);
+            devDept.Eyeshot.RotateSettings rotateSettings7 = new devDept.Eyeshot.RotateSettings(new devDept.Eyeshot.MouseButton(devDept.Eyeshot.mouseButtonsZPR.Middle, devDept.Eyeshot.modifierKeys.None), 10D, true, 1D, devDept.Eyeshot.rotationType.Trackball, devDept.Eyeshot.rotationCenterType.CursorLocation, new devDept.Geometry.Point3D(0D, 0D, 0D), false);
+            devDept.Eyeshot.ZoomSettings zoomSettings7 = new devDept.Eyeshot.ZoomSettings(new devDept.Eyeshot.MouseButton(devDept.Eyeshot.mouseButtonsZPR.Middle, devDept.Eyeshot.modifierKeys.Shift), 25, true, devDept.Eyeshot.zoomStyleType.AtCursorLocation, false, 1D, System.Drawing.Color.Empty, devDept.Eyeshot.Camera.perspectiveFitType.Accurate, false, 10, true);
+            devDept.Eyeshot.PanSettings panSettings7 = new devDept.Eyeshot.PanSettings(new devDept.Eyeshot.MouseButton(devDept.Eyeshot.mouseButtonsZPR.Middle, devDept.Eyeshot.modifierKeys.Ctrl), 25, true);
+            devDept.Eyeshot.NavigationSettings navigationSettings7 = new devDept.Eyeshot.NavigationSettings(devDept.Eyeshot.Camera.navigationType.Examine, new devDept.Eyeshot.MouseButton(devDept.Eyeshot.mouseButtonsZPR.Left, devDept.Eyeshot.modifierKeys.None), new devDept.Geometry.Point3D(-1000D, -1000D, -1000D), new devDept.Geometry.Point3D(1000D, 1000D, 1000D), 8D, 50D, 50D);
+            devDept.Eyeshot.Viewport.SavedViewsManager savedViewsManager7 = new devDept.Eyeshot.Viewport.SavedViewsManager(8);
+            devDept.Eyeshot.Viewport viewport7 = new devDept.Eyeshot.Viewport(new System.Drawing.Point(0, 0), new System.Drawing.Size(520, 522), backgroundSettings7, camera7, new devDept.Eyeshot.ToolBar[] {
+            toolBar7}, devDept.Eyeshot.displayType.Rendered, true, false, false, false, new devDept.Eyeshot.Grid[] {
+            grid7}, new devDept.Eyeshot.OriginSymbol[] {
+            originSymbol7}, false, rotateSettings7, zoomSettings7, panSettings7, navigationSettings7, savedViewsManager7, devDept.Eyeshot.viewType.Trimetric);
+            devDept.Eyeshot.CoordinateSystemIcon coordinateSystemIcon7 = new devDept.Eyeshot.CoordinateSystemIcon(System.Drawing.Color.Black, System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80))))), System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80))))), System.Drawing.Color.OrangeRed, "Origin", "X", "Y", "Z", true, devDept.Eyeshot.coordinateSystemPositionType.BottomLeft, 37, false);
+            devDept.Eyeshot.ViewCubeIcon viewCubeIcon7 = new devDept.Eyeshot.ViewCubeIcon(devDept.Eyeshot.coordinateSystemPositionType.TopRight, true, System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(144)))), ((int)(((byte)(255))))), true, "FRONT", "BACK", "LEFT", "RIGHT", "TOP", "BOTTOM", System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), 'S', 'N', 'W', 'E', true, System.Drawing.Color.White, System.Drawing.Color.Black, 120, true, true, null, null, null, null, null, null, false);
+            devDept.Graphics.BackgroundSettings backgroundSettings8 = new devDept.Graphics.BackgroundSettings(devDept.Graphics.backgroundStyleType.Solid, System.Drawing.Color.DeepSkyBlue, System.Drawing.Color.DodgerBlue, System.Drawing.Color.Gainsboro, 0.75D, null, devDept.Graphics.colorThemeType.Auto, 0.33D);
+            devDept.Eyeshot.Camera camera8 = new devDept.Eyeshot.Camera(new devDept.Geometry.Point3D(-4.5374030325107811E-16D, 2.0434646606445304D, 47.596564948558793D), 97.257904648780823D, new devDept.Geometry.Quaternion(0.49999999999999989D, 0.5D, 0.5D, 0.50000000000000011D), devDept.Graphics.projectionType.Orthographic, 40D, 1.8474082287686384D, false, 0.001D);
+            devDept.Eyeshot.MagnifyingGlassToolBarButton magnifyingGlassToolBarButton8 = new devDept.Eyeshot.MagnifyingGlassToolBarButton("Magnifying Glass", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
+            devDept.Eyeshot.ZoomWindowToolBarButton zoomWindowToolBarButton8 = new devDept.Eyeshot.ZoomWindowToolBarButton("Zoom Window", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
+            devDept.Eyeshot.ZoomToolBarButton zoomToolBarButton8 = new devDept.Eyeshot.ZoomToolBarButton("Zoom", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
+            devDept.Eyeshot.PanToolBarButton panToolBarButton8 = new devDept.Eyeshot.PanToolBarButton("Pan", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
+            devDept.Eyeshot.ZoomFitToolBarButton zoomFitToolBarButton8 = new devDept.Eyeshot.ZoomFitToolBarButton("Zoom Fit", devDept.Eyeshot.ToolBarButton.styleType.PushButton, true, true);
+            devDept.Eyeshot.ToolBar toolBar8 = new devDept.Eyeshot.ToolBar(devDept.Eyeshot.ToolBar.positionType.HorizontalTopCenter, true, new devDept.Eyeshot.ToolBarButton[] {
+            ((devDept.Eyeshot.ToolBarButton)(magnifyingGlassToolBarButton8)),
+            ((devDept.Eyeshot.ToolBarButton)(zoomWindowToolBarButton8)),
+            ((devDept.Eyeshot.ToolBarButton)(zoomToolBarButton8)),
+            ((devDept.Eyeshot.ToolBarButton)(panToolBarButton8)),
+            ((devDept.Eyeshot.ToolBarButton)(zoomFitToolBarButton8))});
+            devDept.Eyeshot.Grid grid8 = new devDept.Eyeshot.Grid(new devDept.Geometry.Point3D(-100D, -100D, 0D), new devDept.Geometry.Point3D(100D, 100D, 0D), 5D, new devDept.Geometry.Plane(new devDept.Geometry.Point3D(0D, 0D, 0D), new devDept.Geometry.Vector3D(0D, 0D, 1D)), System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128))))), System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))), System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), false, false, false, false, 10, 100, 10, System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90))))), System.Drawing.Color.Transparent, false, System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255))))));
+            devDept.Eyeshot.OriginSymbol originSymbol8 = new devDept.Eyeshot.OriginSymbol(10, devDept.Eyeshot.originSymbolStyleType.Ball, System.Drawing.Color.Black, System.Drawing.Color.Red, System.Drawing.Color.Green, System.Drawing.Color.Blue, "Origin", "X", "Y", "Z", true, null, false);
+            devDept.Eyeshot.RotateSettings rotateSettings8 = new devDept.Eyeshot.RotateSettings(new devDept.Eyeshot.MouseButton(devDept.Eyeshot.mouseButtonsZPR.Middle, devDept.Eyeshot.modifierKeys.None), 10D, false, 1D, devDept.Eyeshot.rotationType.Trackball, devDept.Eyeshot.rotationCenterType.CursorLocation, new devDept.Geometry.Point3D(0D, 0D, 0D), false);
+            devDept.Eyeshot.ZoomSettings zoomSettings8 = new devDept.Eyeshot.ZoomSettings(new devDept.Eyeshot.MouseButton(devDept.Eyeshot.mouseButtonsZPR.Middle, devDept.Eyeshot.modifierKeys.Shift), 25, true, devDept.Eyeshot.zoomStyleType.AtCursorLocation, false, 1D, System.Drawing.Color.Empty, devDept.Eyeshot.Camera.perspectiveFitType.Accurate, false, 10, true);
+            devDept.Eyeshot.PanSettings panSettings8 = new devDept.Eyeshot.PanSettings(new devDept.Eyeshot.MouseButton(devDept.Eyeshot.mouseButtonsZPR.Middle, devDept.Eyeshot.modifierKeys.Ctrl), 25, true);
+            devDept.Eyeshot.NavigationSettings navigationSettings8 = new devDept.Eyeshot.NavigationSettings(devDept.Eyeshot.Camera.navigationType.Examine, new devDept.Eyeshot.MouseButton(devDept.Eyeshot.mouseButtonsZPR.Left, devDept.Eyeshot.modifierKeys.None), new devDept.Geometry.Point3D(-1000D, -1000D, -1000D), new devDept.Geometry.Point3D(1000D, 1000D, 1000D), 8D, 50D, 50D);
+            devDept.Eyeshot.Viewport.SavedViewsManager savedViewsManager8 = new devDept.Eyeshot.Viewport.SavedViewsManager(8);
+            devDept.Eyeshot.Viewport viewport8 = new devDept.Eyeshot.Viewport(new System.Drawing.Point(524, 0), new System.Drawing.Size(520, 522), backgroundSettings8, camera8, new devDept.Eyeshot.ToolBar[] {
+            toolBar8}, devDept.Eyeshot.displayType.Shaded, true, false, false, false, new devDept.Eyeshot.Grid[] {
+            grid8}, new devDept.Eyeshot.OriginSymbol[] {
+            originSymbol8}, false, rotateSettings8, zoomSettings8, panSettings8, navigationSettings8, savedViewsManager8, devDept.Eyeshot.viewType.Top);
+            devDept.Eyeshot.CoordinateSystemIcon coordinateSystemIcon8 = new devDept.Eyeshot.CoordinateSystemIcon(System.Drawing.Color.Black, System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80))))), System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80))))), System.Drawing.Color.OrangeRed, "Origin", "X", "Y", "Z", true, devDept.Eyeshot.coordinateSystemPositionType.BottomLeft, 37, false);
+            devDept.Eyeshot.ViewCubeIcon viewCubeIcon8 = new devDept.Eyeshot.ViewCubeIcon(devDept.Eyeshot.coordinateSystemPositionType.TopRight, false, System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(144)))), ((int)(((byte)(255))))), true, "FRONT", "BACK", "LEFT", "RIGHT", "TOP", "BOTTOM", System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), 'S', 'N', 'W', 'E', true, System.Drawing.Color.White, System.Drawing.Color.Black, 120, true, true, null, null, null, null, null, null, false);
             this.model1 = new devDept.Eyeshot.Model();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -175,11 +175,10 @@
             this.clippingPlane적용ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.충돌체크ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bRepToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.volumnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.edge추출ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cylinderFace선택ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.coneFace선택ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.surfaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ellipsoidToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.planarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.extrudeWithTwistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.model1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -191,26 +190,26 @@
             this.model1.Location = new System.Drawing.Point(0, 24);
             this.model1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.model1.Name = "model1";
-            this.model1.ProgressBar = progressBar6;
-            this.model1.Size = new System.Drawing.Size(1044, 413);
+            this.model1.ProgressBar = progressBar4;
+            this.model1.Size = new System.Drawing.Size(1044, 522);
             this.model1.TabIndex = 0;
             this.model1.Text = "model1";
-            originSymbol11.LabelFont = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            coordinateSystemIcon11.LabelFont = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            viewport11.CoordinateSystemIcon = coordinateSystemIcon11;
-            viewport11.Legends = new devDept.Eyeshot.Legend[0];
-            viewCubeIcon11.Font = null;
-            viewCubeIcon11.InitialRotation = new devDept.Geometry.Quaternion(0D, 0D, 0D, 1D);
-            viewport11.ViewCubeIcon = viewCubeIcon11;
-            originSymbol12.LabelFont = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            coordinateSystemIcon12.LabelFont = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            viewport12.CoordinateSystemIcon = coordinateSystemIcon12;
-            viewport12.Legends = new devDept.Eyeshot.Legend[0];
-            viewCubeIcon12.Font = null;
-            viewCubeIcon12.InitialRotation = new devDept.Geometry.Quaternion(0D, 0D, 0D, 1D);
-            viewport12.ViewCubeIcon = viewCubeIcon12;
-            this.model1.Viewports.Add(viewport11);
-            this.model1.Viewports.Add(viewport12);
+            originSymbol7.LabelFont = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            coordinateSystemIcon7.LabelFont = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            viewport7.CoordinateSystemIcon = coordinateSystemIcon7;
+            viewport7.Legends = new devDept.Eyeshot.Legend[0];
+            viewCubeIcon7.Font = null;
+            viewCubeIcon7.InitialRotation = new devDept.Geometry.Quaternion(0D, 0D, 0D, 1D);
+            viewport7.ViewCubeIcon = viewCubeIcon7;
+            originSymbol8.LabelFont = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            coordinateSystemIcon8.LabelFont = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            viewport8.CoordinateSystemIcon = coordinateSystemIcon8;
+            viewport8.Legends = new devDept.Eyeshot.Legend[0];
+            viewCubeIcon8.Font = null;
+            viewCubeIcon8.InitialRotation = new devDept.Geometry.Quaternion(0D, 0D, 0D, 1D);
+            viewport8.ViewCubeIcon = viewCubeIcon8;
+            this.model1.Viewports.Add(viewport7);
+            this.model1.Viewports.Add(viewport8);
             this.model1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.model1_MouseDoubleClick);
             this.model1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.model1_MouseDown);
             // 
@@ -272,7 +271,8 @@
             this.compositeCurveToMeshToolStripMenuItem,
             this.regionToolStripMenuItem,
             this.region으로Mesh생성ToolStripMenuItem,
-            this.bRepToolStripMenuItem});
+            this.bRepToolStripMenuItem,
+            this.surfaceToolStripMenuItem});
             this.객체만들기ToolStripMenuItem.Name = "객체만들기ToolStripMenuItem";
             this.객체만들기ToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.객체만들기ToolStripMenuItem.Text = "객체만들기";
@@ -870,8 +870,7 @@
             this.clippingPlane제거ToolStripMenuItem,
             this.clippingPlane적용ToolStripMenuItem,
             this.toolStripSeparator2,
-            this.충돌체크ToolStripMenuItem,
-            this.bRepToolStripMenuItem1});
+            this.충돌체크ToolStripMenuItem});
             this.cuttingPlaneToolStripMenuItem.Name = "cuttingPlaneToolStripMenuItem";
             this.cuttingPlaneToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.cuttingPlaneToolStripMenuItem.Text = "검토";
@@ -879,87 +878,79 @@
             // cuttingToolStripMenuItem
             // 
             this.cuttingToolStripMenuItem.Name = "cuttingToolStripMenuItem";
-            this.cuttingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cuttingToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.cuttingToolStripMenuItem.Text = "ClippingPlane1";
             this.cuttingToolStripMenuItem.Click += new System.EventHandler(this.cuttingToolStripMenuItem_Click);
             // 
             // clippingPlane2ToolStripMenuItem
             // 
             this.clippingPlane2ToolStripMenuItem.Name = "clippingPlane2ToolStripMenuItem";
-            this.clippingPlane2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clippingPlane2ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.clippingPlane2ToolStripMenuItem.Text = "ClippingPlane2";
             this.clippingPlane2ToolStripMenuItem.Click += new System.EventHandler(this.clippingPlane2ToolStripMenuItem_Click);
             // 
             // clippingPlane제거ToolStripMenuItem
             // 
             this.clippingPlane제거ToolStripMenuItem.Name = "clippingPlane제거ToolStripMenuItem";
-            this.clippingPlane제거ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clippingPlane제거ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.clippingPlane제거ToolStripMenuItem.Text = "ClippingPlane제거";
             this.clippingPlane제거ToolStripMenuItem.Click += new System.EventHandler(this.clippingPlane제거ToolStripMenuItem_Click);
             // 
             // clippingPlane적용ToolStripMenuItem
             // 
             this.clippingPlane적용ToolStripMenuItem.Name = "clippingPlane적용ToolStripMenuItem";
-            this.clippingPlane적용ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clippingPlane적용ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.clippingPlane적용ToolStripMenuItem.Text = "ClippingPlane적용";
             this.clippingPlane적용ToolStripMenuItem.Click += new System.EventHandler(this.clippingPlane적용ToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(169, 6);
             // 
             // 충돌체크ToolStripMenuItem
             // 
             this.충돌체크ToolStripMenuItem.Name = "충돌체크ToolStripMenuItem";
-            this.충돌체크ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.충돌체크ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.충돌체크ToolStripMenuItem.Text = "충돌체크";
             this.충돌체크ToolStripMenuItem.Click += new System.EventHandler(this.충돌체크ToolStripMenuItem_Click);
             // 
-            // bRepToolStripMenuItem1
+            // surfaceToolStripMenuItem
             // 
-            this.bRepToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.volumnToolStripMenuItem,
-            this.edge추출ToolStripMenuItem,
-            this.cylinderFace선택ToolStripMenuItem,
-            this.coneFace선택ToolStripMenuItem});
-            this.bRepToolStripMenuItem1.Name = "bRepToolStripMenuItem1";
-            this.bRepToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.bRepToolStripMenuItem1.Text = "BRep";
+            this.surfaceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ellipsoidToolStripMenuItem,
+            this.planarToolStripMenuItem1,
+            this.extrudeWithTwistToolStripMenuItem});
+            this.surfaceToolStripMenuItem.Name = "surfaceToolStripMenuItem";
+            this.surfaceToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.surfaceToolStripMenuItem.Text = "Surface";
             // 
-            // volumnToolStripMenuItem
+            // ellipsoidToolStripMenuItem
             // 
-            this.volumnToolStripMenuItem.Name = "volumnToolStripMenuItem";
-            this.volumnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.volumnToolStripMenuItem.Text = "Volume";
-            this.volumnToolStripMenuItem.Click += new System.EventHandler(this.volumnToolStripMenuItem_Click);
+            this.ellipsoidToolStripMenuItem.Name = "ellipsoidToolStripMenuItem";
+            this.ellipsoidToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ellipsoidToolStripMenuItem.Text = "Ellipsoid";
+            this.ellipsoidToolStripMenuItem.Click += new System.EventHandler(this.ellipsoidToolStripMenuItem_Click);
             // 
-            // edge추출ToolStripMenuItem
+            // planarToolStripMenuItem1
             // 
-            this.edge추출ToolStripMenuItem.Name = "edge추출ToolStripMenuItem";
-            this.edge추출ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.edge추출ToolStripMenuItem.Text = "Edge 추출";
-            this.edge추출ToolStripMenuItem.Click += new System.EventHandler(this.edge추출ToolStripMenuItem_Click);
+            this.planarToolStripMenuItem1.Name = "planarToolStripMenuItem1";
+            this.planarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.planarToolStripMenuItem1.Text = "Loft";
+            this.planarToolStripMenuItem1.Click += new System.EventHandler(this.planarToolStripMenuItem1_Click);
             // 
-            // cylinderFace선택ToolStripMenuItem
+            // extrudeWithTwistToolStripMenuItem
             // 
-            this.cylinderFace선택ToolStripMenuItem.Name = "cylinderFace선택ToolStripMenuItem";
-            this.cylinderFace선택ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cylinderFace선택ToolStripMenuItem.Text = "Cylinder face 선택";
-            this.cylinderFace선택ToolStripMenuItem.Click += new System.EventHandler(this.cylinderFace선택ToolStripMenuItem_Click);
-            // 
-            // coneFace선택ToolStripMenuItem
-            // 
-            this.coneFace선택ToolStripMenuItem.Name = "coneFace선택ToolStripMenuItem";
-            this.coneFace선택ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.coneFace선택ToolStripMenuItem.Text = "Cone face 선택";
-            this.coneFace선택ToolStripMenuItem.Click += new System.EventHandler(this.coneFace선택ToolStripMenuItem_Click);
+            this.extrudeWithTwistToolStripMenuItem.Name = "extrudeWithTwistToolStripMenuItem";
+            this.extrudeWithTwistToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.extrudeWithTwistToolStripMenuItem.Text = "ExtrudeWithTwist";
+            this.extrudeWithTwistToolStripMenuItem.Click += new System.EventHandler(this.extrudeWithTwistToolStripMenuItem_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 437);
+            this.ClientSize = new System.Drawing.Size(1044, 546);
             this.Controls.Add(this.model1);
             this.Controls.Add(this.menuStrip1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1066,11 +1057,10 @@
         private System.Windows.Forms.ToolStripMenuItem clippingPlane적용ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem 충돌체크ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bRepToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem volumnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem edge추출ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cylinderFace선택ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem coneFace선택ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem surfaceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ellipsoidToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem planarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem extrudeWithTwistToolStripMenuItem;
     }
 }
 
