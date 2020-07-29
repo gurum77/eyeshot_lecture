@@ -631,7 +631,6 @@ namespace eyeshot강의
         {
             BooleanManager bm = new BooleanManager();
             bm.Intersection(model1);
-
         }
 
         private void unionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -719,6 +718,7 @@ namespace eyeshot강의
 
         private void 충돌체크ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             // 충돌체크 클래스 구성
             CollisionDetection cd = new CollisionDetection(model1.Entities, model1.Blocks);
 
@@ -733,6 +733,38 @@ namespace eyeshot강의
                 result.CollidedEntities.Item2.Entity.Selected = true;
             }
             model1.Invalidate();
+        }
+
+        private void volumnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BrepChecker bc = new BrepChecker();
+            bc.CalcVolumes(model1);
+
+        }
+
+        private void edge추출ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BrepChecker bc = new BrepChecker();
+            bc.GetEdges(model1);
+        }
+
+        private void face추출ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cylinderFace선택ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // 실린더 형태의 face 선택
+            BrepChecker bc = new BrepChecker();
+            bc.SelectCylinderFaces(model1);
+        }
+
+        private void coneFace선택ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // 콘 형태의 face 선택
+            BrepChecker bc = new BrepChecker();
+            bc.SelectConeFaces(model1);
         }
     }
 }

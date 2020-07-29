@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BooleanManager.cs" />
+    <Compile Include="BrepChecker.cs" />
     <Compile Include="BrepCreator.cs" />
     <Compile Include="CurveToMesh.cs" />
     <Compile Include="CurveCreator.cs" />
