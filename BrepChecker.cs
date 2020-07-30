@@ -9,6 +9,34 @@ namespace eyeshot강의
 {
     internal class BrepChecker
     {
+        public void SelectPlanarFaces(Model model1)
+        {
+            foreach (Entity ent in model1.Entities)
+            {
+                // 객체를 Brep로 형변환을 시도
+                Brep b = ent as Brep;
+                // 변환 실패하면 통과
+                if (b == null)
+                {
+                    continue;
+                }
+
+                // brep의 face를 모두 조회
+                for (int i = 0; i < b.Faces.Length; ++i)
+                {
+                    Brep.Face face = b.Faces[i];
+                    var surface = face.Surface;
+
+                    // face가 콘 형태이면 선택
+                    if (surface is PlanarSurf && !surface.GetType().IsSubclassOf(typeof(PlanarSurf)))
+                    {
+                        b.SetFaceSelection(i, true);
+                    }
+                }
+            }
+            model1.Invalidate();
+        }
+
         public void SelectConeFaces(Model model1)
         {
             foreach (Entity ent in model1.Entities)
@@ -25,9 +53,10 @@ namespace eyeshot강의
                 for (int i = 0; i < b.Faces.Length; ++i)
                 {
                     Brep.Face face = b.Faces[i];
+                    var surface = face.Surface;
 
                     // face가 콘 형태이면 선택
-                    if (face.Surface is ConicalSurf)
+                    if (surface is ConicalSurf && !surface.GetType().IsSubclassOf(typeof(ConicalSurf)))
                     {
                         b.SetFaceSelection(i, true);
                     }
@@ -51,9 +80,10 @@ namespace eyeshot강의
                 for (int i = 0; i < b.Faces.Length; ++i)
                 {
                     Brep.Face face = b.Faces[i];
+                    var surface = face.Surface;
 
                     // face가 실린더 형태이면 선택
-                    if (face.Surface is CylindricalSurf)
+                    if (surface is CylindricalSurf && !surface.GetType().IsSubclassOf(typeof(CylindricalSurf)))
                     {
                         b.SetFaceSelection(i, true);
                     }

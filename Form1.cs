@@ -778,5 +778,92 @@ namespace eyeshot강의
             BrepChecker bc = new BrepChecker();
             bc.SelectConeFaces(model1);
         }
+
+        private void planeFace선택ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // 평면 형태의 face 선택
+            BrepChecker bc = new BrepChecker();
+            bc.SelectPlanarFaces(model1);
+        }
+
+        // 2d view
+        private void dViewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // 원근법 미적용
+            model1.ActiveViewport.Camera.ProjectionMode = projectionType.Orthographic;
+
+            // 그리드 숨김
+            model1.ActiveViewport.Grid.Visible = false;
+
+            // 배경은 검정색으로
+            model1.ActiveViewport.Background.TopColor = Color.Black;
+            model1.ActiveViewport.Background.BottomColor = Color.Black;
+
+            // top view로 변경
+            model1.ActiveViewport.SetView(viewType.Top);
+
+            // view 회전 비활성화
+            model1.ActiveViewport.Rotate.Enabled = false;
+
+            // wireframe 모드로 변경
+            model1.ActiveViewport.DisplayMode = displayType.Wireframe;
+            
+            model1.ActiveViewport.Invalidate();
+        }
+
+        // 3d view
+        private void dViewToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            // 원근법 적용
+            model1.ActiveViewport.Camera.ProjectionMode = projectionType.Perspective;
+
+            // 그리드 표시
+            model1.ActiveViewport.Grid.Visible = false;
+
+            // 배경은 파란색 -> 흰색으로 그라데이션
+            model1.ActiveViewport.Background.TopColor = Color.Blue;
+            model1.ActiveViewport.Background.BottomColor = Color.White;
+
+    
+            // 삼차원 보기로 변경
+            model1.ActiveViewport.SetView(viewType.Trimetric);
+
+            // view 회전 활성화
+            model1.ActiveViewport.Rotate.Enabled = true;
+
+            // render 모드로 변경
+            model1.ActiveViewport.DisplayMode = displayType.Rendered;
+
+            model1.ActiveViewport.Invalidate();
+        }
+
+     
+
+        private void customData추가ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach(var ent in model1.Entities)
+            {
+                ent.EntityData = "custom data가 있습니다.";
+            }
+
+            MessageBox.Show("모든 객체에 custom data 설정 완료.");
+        }
+
+        private void customData보기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            int count = 0;
+            foreach(var ent in model1.Entities)
+            {
+                if (ent.EntityData == null)
+                    continue;
+
+                count++;
+
+                MessageBox.Show(ent.EntityData.ToString());
+            }
+
+            MessageBox.Show($"{count}개의 객체에 custom data가 있습니다.");
+        }
     }
 }
