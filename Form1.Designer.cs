@@ -31,7 +31,7 @@
             devDept.Eyeshot.CancelToolBarButton cancelToolBarButton4 = new devDept.Eyeshot.CancelToolBarButton("Cancel", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
             devDept.Eyeshot.ProgressBar progressBar4 = new devDept.Eyeshot.ProgressBar(devDept.Eyeshot.ProgressBar.styleType.Circular, 0, "Idle", System.Drawing.Color.Black, System.Drawing.Color.Transparent, System.Drawing.Color.Red, 1D, true, cancelToolBarButton4, false, 0.2D, true);
             devDept.Graphics.BackgroundSettings backgroundSettings7 = new devDept.Graphics.BackgroundSettings(devDept.Graphics.backgroundStyleType.LinearGradient, System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245))))), System.Drawing.Color.DodgerBlue, System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(210))))), 0.75D, null, devDept.Graphics.colorThemeType.Auto, 0.33D);
-            devDept.Eyeshot.Camera camera7 = new devDept.Eyeshot.Camera(new devDept.Geometry.Point3D(0D, 0D, 45D), 380D, new devDept.Geometry.Quaternion(0.12940952255126034D, 0.22414386804201339D, 0.4829629131445341D, 0.83651630373780794D), devDept.Graphics.projectionType.Perspective, 40D, 4.1300000347503811D, false, 0.001D);
+            devDept.Eyeshot.Camera camera7 = new devDept.Eyeshot.Camera(new devDept.Geometry.Point3D(0D, 0D, 45D), 380D, new devDept.Geometry.Quaternion(0.12940952255126034D, 0.22414386804201339D, 0.4829629131445341D, 0.83651630373780794D), devDept.Graphics.projectionType.Perspective, 40D, 5.2199999977628426D, false, 0.001D);
             devDept.Eyeshot.HomeToolBarButton homeToolBarButton4 = new devDept.Eyeshot.HomeToolBarButton("Home", devDept.Eyeshot.ToolBarButton.styleType.PushButton, true, true);
             devDept.Eyeshot.MagnifyingGlassToolBarButton magnifyingGlassToolBarButton7 = new devDept.Eyeshot.MagnifyingGlassToolBarButton("Magnifying Glass", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
             devDept.Eyeshot.ZoomWindowToolBarButton zoomWindowToolBarButton7 = new devDept.Eyeshot.ZoomWindowToolBarButton("Zoom Window", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
@@ -54,14 +54,14 @@
             devDept.Eyeshot.PanSettings panSettings7 = new devDept.Eyeshot.PanSettings(new devDept.Eyeshot.MouseButton(devDept.Eyeshot.mouseButtonsZPR.Middle, devDept.Eyeshot.modifierKeys.Ctrl), 25, true);
             devDept.Eyeshot.NavigationSettings navigationSettings7 = new devDept.Eyeshot.NavigationSettings(devDept.Eyeshot.Camera.navigationType.Examine, new devDept.Eyeshot.MouseButton(devDept.Eyeshot.mouseButtonsZPR.Left, devDept.Eyeshot.modifierKeys.None), new devDept.Geometry.Point3D(-1000D, -1000D, -1000D), new devDept.Geometry.Point3D(1000D, 1000D, 1000D), 8D, 50D, 50D);
             devDept.Eyeshot.Viewport.SavedViewsManager savedViewsManager7 = new devDept.Eyeshot.Viewport.SavedViewsManager(8);
-            devDept.Eyeshot.Viewport viewport7 = new devDept.Eyeshot.Viewport(new System.Drawing.Point(0, 0), new System.Drawing.Size(520, 413), backgroundSettings7, camera7, new devDept.Eyeshot.ToolBar[] {
+            devDept.Eyeshot.Viewport viewport7 = new devDept.Eyeshot.Viewport(new System.Drawing.Point(0, 0), new System.Drawing.Size(520, 522), backgroundSettings7, camera7, new devDept.Eyeshot.ToolBar[] {
             toolBar7}, devDept.Eyeshot.displayType.Rendered, true, false, false, false, new devDept.Eyeshot.Grid[] {
             grid7}, new devDept.Eyeshot.OriginSymbol[] {
             originSymbol7}, false, rotateSettings7, zoomSettings7, panSettings7, navigationSettings7, savedViewsManager7, devDept.Eyeshot.viewType.Trimetric);
             devDept.Eyeshot.CoordinateSystemIcon coordinateSystemIcon7 = new devDept.Eyeshot.CoordinateSystemIcon(System.Drawing.Color.Black, System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80))))), System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80))))), System.Drawing.Color.OrangeRed, "Origin", "X", "Y", "Z", true, devDept.Eyeshot.coordinateSystemPositionType.BottomLeft, 37, false);
             devDept.Eyeshot.ViewCubeIcon viewCubeIcon7 = new devDept.Eyeshot.ViewCubeIcon(devDept.Eyeshot.coordinateSystemPositionType.TopRight, true, System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(144)))), ((int)(((byte)(255))))), true, "FRONT", "BACK", "LEFT", "RIGHT", "TOP", "BOTTOM", System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77))))), 'S', 'N', 'W', 'E', true, System.Drawing.Color.White, System.Drawing.Color.Black, 120, true, true, null, null, null, null, null, null, false);
             devDept.Graphics.BackgroundSettings backgroundSettings8 = new devDept.Graphics.BackgroundSettings(devDept.Graphics.backgroundStyleType.Solid, System.Drawing.Color.DeepSkyBlue, System.Drawing.Color.DodgerBlue, System.Drawing.Color.Gainsboro, 0.75D, null, devDept.Graphics.colorThemeType.Auto, 0.33D);
-            devDept.Eyeshot.Camera camera8 = new devDept.Eyeshot.Camera(new devDept.Geometry.Point3D(-4.5374030325107811E-16D, 2.0434646606445304D, 47.596564948558793D), 97.257904648780823D, new devDept.Geometry.Quaternion(0.49999999999999989D, 0.5D, 0.5D, 0.50000000000000011D), devDept.Graphics.projectionType.Orthographic, 40D, 1.4616467862461042D, false, 0.001D);
+            devDept.Eyeshot.Camera camera8 = new devDept.Eyeshot.Camera(new devDept.Geometry.Point3D(-4.5374030325107811E-16D, 2.0434646606445304D, 47.596564948558793D), 97.257904648780823D, new devDept.Geometry.Quaternion(0.49999999999999989D, 0.5D, 0.5D, 0.50000000000000011D), devDept.Graphics.projectionType.Orthographic, 40D, 1.8474082703962684D, false, 0.001D);
             devDept.Eyeshot.MagnifyingGlassToolBarButton magnifyingGlassToolBarButton8 = new devDept.Eyeshot.MagnifyingGlassToolBarButton("Magnifying Glass", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
             devDept.Eyeshot.ZoomWindowToolBarButton zoomWindowToolBarButton8 = new devDept.Eyeshot.ZoomWindowToolBarButton("Zoom Window", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
             devDept.Eyeshot.ZoomToolBarButton zoomToolBarButton8 = new devDept.Eyeshot.ZoomToolBarButton("Zoom", devDept.Eyeshot.ToolBarButton.styleType.ToggleButton, true, true);
@@ -80,7 +80,7 @@
             devDept.Eyeshot.PanSettings panSettings8 = new devDept.Eyeshot.PanSettings(new devDept.Eyeshot.MouseButton(devDept.Eyeshot.mouseButtonsZPR.Middle, devDept.Eyeshot.modifierKeys.Ctrl), 25, true);
             devDept.Eyeshot.NavigationSettings navigationSettings8 = new devDept.Eyeshot.NavigationSettings(devDept.Eyeshot.Camera.navigationType.Examine, new devDept.Eyeshot.MouseButton(devDept.Eyeshot.mouseButtonsZPR.Left, devDept.Eyeshot.modifierKeys.None), new devDept.Geometry.Point3D(-1000D, -1000D, -1000D), new devDept.Geometry.Point3D(1000D, 1000D, 1000D), 8D, 50D, 50D);
             devDept.Eyeshot.Viewport.SavedViewsManager savedViewsManager8 = new devDept.Eyeshot.Viewport.SavedViewsManager(8);
-            devDept.Eyeshot.Viewport viewport8 = new devDept.Eyeshot.Viewport(new System.Drawing.Point(524, 0), new System.Drawing.Size(520, 413), backgroundSettings8, camera8, new devDept.Eyeshot.ToolBar[] {
+            devDept.Eyeshot.Viewport viewport8 = new devDept.Eyeshot.Viewport(new System.Drawing.Point(524, 0), new System.Drawing.Size(520, 522), backgroundSettings8, camera8, new devDept.Eyeshot.ToolBar[] {
             toolBar8}, devDept.Eyeshot.displayType.Shaded, true, false, false, false, new devDept.Eyeshot.Grid[] {
             grid8}, new devDept.Eyeshot.OriginSymbol[] {
             originSymbol8}, false, rotateSettings8, zoomSettings8, panSettings8, navigationSettings8, savedViewsManager8, devDept.Eyeshot.viewType.Top);
@@ -156,6 +156,9 @@
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.vertexColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customData추가ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customData보기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.layerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.layer색변경ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.layer목록조회ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -188,9 +191,11 @@
             this.d3DViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dViewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.customDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customData추가ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customData보기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.치수ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.linearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.radiusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.diametricToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.angularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.model1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -203,7 +208,7 @@
             this.model1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.model1.Name = "model1";
             this.model1.ProgressBar = progressBar4;
-            this.model1.Size = new System.Drawing.Size(1044, 413);
+            this.model1.Size = new System.Drawing.Size(1044, 522);
             this.model1.TabIndex = 0;
             this.model1.Text = "model1";
             originSymbol7.LabelFont = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -285,7 +290,8 @@
             this.regionToolStripMenuItem,
             this.region으로Mesh생성ToolStripMenuItem,
             this.bRepToolStripMenuItem,
-            this.surfaceToolStripMenuItem});
+            this.surfaceToolStripMenuItem,
+            this.치수ToolStripMenuItem});
             this.객체만들기ToolStripMenuItem.Name = "객체만들기ToolStripMenuItem";
             this.객체만들기ToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.객체만들기ToolStripMenuItem.Text = "객체만들기";
@@ -728,7 +734,7 @@
             this.byEntityToolStripMenuItem,
             this.byLayerToolStripMenuItem});
             this.색변경ToolStripMenuItem.Name = "색변경ToolStripMenuItem";
-            this.색변경ToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.색변경ToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.색변경ToolStripMenuItem.Text = "색 변경";
             // 
             // byEntityToolStripMenuItem
@@ -752,7 +758,7 @@
             this.toolStripMenuItem4,
             this.toolStripMenuItem5});
             this.투명도ToolStripMenuItem.Name = "투명도ToolStripMenuItem";
-            this.투명도ToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.투명도ToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.투명도ToolStripMenuItem.Text = "투명도";
             // 
             // toolStripMenuItem3
@@ -779,9 +785,32 @@
             // vertexColorToolStripMenuItem
             // 
             this.vertexColorToolStripMenuItem.Name = "vertexColorToolStripMenuItem";
-            this.vertexColorToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.vertexColorToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.vertexColorToolStripMenuItem.Text = "VertexColor";
             this.vertexColorToolStripMenuItem.Click += new System.EventHandler(this.vertexColorToolStripMenuItem_Click);
+            // 
+            // customDataToolStripMenuItem
+            // 
+            this.customDataToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.customData추가ToolStripMenuItem,
+            this.customData보기ToolStripMenuItem});
+            this.customDataToolStripMenuItem.Name = "customDataToolStripMenuItem";
+            this.customDataToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.customDataToolStripMenuItem.Text = "CustomData";
+            // 
+            // customData추가ToolStripMenuItem
+            // 
+            this.customData추가ToolStripMenuItem.Name = "customData추가ToolStripMenuItem";
+            this.customData추가ToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.customData추가ToolStripMenuItem.Text = "CustomData설정";
+            this.customData추가ToolStripMenuItem.Click += new System.EventHandler(this.customData추가ToolStripMenuItem_Click);
+            // 
+            // customData보기ToolStripMenuItem
+            // 
+            this.customData보기ToolStripMenuItem.Name = "customData보기ToolStripMenuItem";
+            this.customData보기ToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.customData보기ToolStripMenuItem.Text = "CustomData보기";
+            this.customData보기ToolStripMenuItem.Click += new System.EventHandler(this.customData보기ToolStripMenuItem_Click);
             // 
             // layerToolStripMenuItem
             // 
@@ -924,40 +953,40 @@
             // cuttingToolStripMenuItem
             // 
             this.cuttingToolStripMenuItem.Name = "cuttingToolStripMenuItem";
-            this.cuttingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cuttingToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.cuttingToolStripMenuItem.Text = "ClippingPlane1";
             this.cuttingToolStripMenuItem.Click += new System.EventHandler(this.cuttingToolStripMenuItem_Click);
             // 
             // clippingPlane2ToolStripMenuItem
             // 
             this.clippingPlane2ToolStripMenuItem.Name = "clippingPlane2ToolStripMenuItem";
-            this.clippingPlane2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clippingPlane2ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.clippingPlane2ToolStripMenuItem.Text = "ClippingPlane2";
             this.clippingPlane2ToolStripMenuItem.Click += new System.EventHandler(this.clippingPlane2ToolStripMenuItem_Click);
             // 
             // clippingPlane제거ToolStripMenuItem
             // 
             this.clippingPlane제거ToolStripMenuItem.Name = "clippingPlane제거ToolStripMenuItem";
-            this.clippingPlane제거ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clippingPlane제거ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.clippingPlane제거ToolStripMenuItem.Text = "ClippingPlane제거";
             this.clippingPlane제거ToolStripMenuItem.Click += new System.EventHandler(this.clippingPlane제거ToolStripMenuItem_Click);
             // 
             // clippingPlane적용ToolStripMenuItem
             // 
             this.clippingPlane적용ToolStripMenuItem.Name = "clippingPlane적용ToolStripMenuItem";
-            this.clippingPlane적용ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clippingPlane적용ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.clippingPlane적용ToolStripMenuItem.Text = "ClippingPlane적용";
             this.clippingPlane적용ToolStripMenuItem.Click += new System.EventHandler(this.clippingPlane적용ToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(169, 6);
             // 
             // 충돌체크ToolStripMenuItem
             // 
             this.충돌체크ToolStripMenuItem.Name = "충돌체크ToolStripMenuItem";
-            this.충돌체크ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.충돌체크ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.충돌체크ToolStripMenuItem.Text = "충돌체크";
             this.충돌체크ToolStripMenuItem.Click += new System.EventHandler(this.충돌체크ToolStripMenuItem_Click);
             // 
@@ -970,41 +999,41 @@
             this.coneFace선택ToolStripMenuItem,
             this.planeFace선택ToolStripMenuItem});
             this.brepToolStripMenuItem1.Name = "brepToolStripMenuItem1";
-            this.brepToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.brepToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
             this.brepToolStripMenuItem1.Text = "Brep";
             // 
             // volumeToolStripMenuItem
             // 
             this.volumeToolStripMenuItem.Name = "volumeToolStripMenuItem";
-            this.volumeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.volumeToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.volumeToolStripMenuItem.Text = "Volume";
             this.volumeToolStripMenuItem.Click += new System.EventHandler(this.volumeToolStripMenuItem_Click);
             // 
             // edge추출ToolStripMenuItem
             // 
             this.edge추출ToolStripMenuItem.Name = "edge추출ToolStripMenuItem";
-            this.edge추출ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.edge추출ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.edge추출ToolStripMenuItem.Text = "Edge 추출";
             this.edge추출ToolStripMenuItem.Click += new System.EventHandler(this.edge추출ToolStripMenuItem_Click);
             // 
             // cylinderFace선택ToolStripMenuItem
             // 
             this.cylinderFace선택ToolStripMenuItem.Name = "cylinderFace선택ToolStripMenuItem";
-            this.cylinderFace선택ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cylinderFace선택ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.cylinderFace선택ToolStripMenuItem.Text = "Cylinder face 선택";
             this.cylinderFace선택ToolStripMenuItem.Click += new System.EventHandler(this.cylinderFace선택ToolStripMenuItem_Click);
             // 
             // coneFace선택ToolStripMenuItem
             // 
             this.coneFace선택ToolStripMenuItem.Name = "coneFace선택ToolStripMenuItem";
-            this.coneFace선택ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.coneFace선택ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.coneFace선택ToolStripMenuItem.Text = "Cone face 선택";
             this.coneFace선택ToolStripMenuItem.Click += new System.EventHandler(this.coneFace선택ToolStripMenuItem_Click);
             // 
             // planeFace선택ToolStripMenuItem
             // 
             this.planeFace선택ToolStripMenuItem.Name = "planeFace선택ToolStripMenuItem";
-            this.planeFace선택ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.planeFace선택ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.planeFace선택ToolStripMenuItem.Text = "Plane face 선택";
             this.planeFace선택ToolStripMenuItem.Click += new System.EventHandler(this.planeFace선택ToolStripMenuItem_Click);
             // 
@@ -1020,45 +1049,61 @@
             // dViewToolStripMenuItem
             // 
             this.dViewToolStripMenuItem.Name = "dViewToolStripMenuItem";
-            this.dViewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dViewToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.dViewToolStripMenuItem.Text = "2D View";
             this.dViewToolStripMenuItem.Click += new System.EventHandler(this.dViewToolStripMenuItem_Click);
             // 
             // dViewToolStripMenuItem1
             // 
             this.dViewToolStripMenuItem1.Name = "dViewToolStripMenuItem1";
-            this.dViewToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.dViewToolStripMenuItem1.Size = new System.Drawing.Size(120, 22);
             this.dViewToolStripMenuItem1.Text = "3D View";
             this.dViewToolStripMenuItem1.Click += new System.EventHandler(this.dViewToolStripMenuItem1_Click);
             // 
-            // customDataToolStripMenuItem
+            // 치수ToolStripMenuItem
             // 
-            this.customDataToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.customData추가ToolStripMenuItem,
-            this.customData보기ToolStripMenuItem});
-            this.customDataToolStripMenuItem.Name = "customDataToolStripMenuItem";
-            this.customDataToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.customDataToolStripMenuItem.Text = "CustomData";
+            this.치수ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.linearToolStripMenuItem,
+            this.radiusToolStripMenuItem,
+            this.diametricToolStripMenuItem,
+            this.angularToolStripMenuItem});
+            this.치수ToolStripMenuItem.Name = "치수ToolStripMenuItem";
+            this.치수ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.치수ToolStripMenuItem.Text = "치수";
             // 
-            // customData추가ToolStripMenuItem
+            // linearToolStripMenuItem
             // 
-            this.customData추가ToolStripMenuItem.Name = "customData추가ToolStripMenuItem";
-            this.customData추가ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.customData추가ToolStripMenuItem.Text = "CustomData설정";
-            this.customData추가ToolStripMenuItem.Click += new System.EventHandler(this.customData추가ToolStripMenuItem_Click);
+            this.linearToolStripMenuItem.Name = "linearToolStripMenuItem";
+            this.linearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.linearToolStripMenuItem.Text = "Linear";
+            this.linearToolStripMenuItem.Click += new System.EventHandler(this.linearToolStripMenuItem_Click);
             // 
-            // customData보기ToolStripMenuItem
+            // radiusToolStripMenuItem
             // 
-            this.customData보기ToolStripMenuItem.Name = "customData보기ToolStripMenuItem";
-            this.customData보기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.customData보기ToolStripMenuItem.Text = "CustomData보기";
-            this.customData보기ToolStripMenuItem.Click += new System.EventHandler(this.customData보기ToolStripMenuItem_Click);
+            this.radiusToolStripMenuItem.Name = "radiusToolStripMenuItem";
+            this.radiusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.radiusToolStripMenuItem.Text = "Radial";
+            this.radiusToolStripMenuItem.Click += new System.EventHandler(this.radiusToolStripMenuItem_Click);
+            // 
+            // diametricToolStripMenuItem
+            // 
+            this.diametricToolStripMenuItem.Name = "diametricToolStripMenuItem";
+            this.diametricToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.diametricToolStripMenuItem.Text = "Diametric";
+            this.diametricToolStripMenuItem.Click += new System.EventHandler(this.diametricToolStripMenuItem_Click);
+            // 
+            // angularToolStripMenuItem
+            // 
+            this.angularToolStripMenuItem.Name = "angularToolStripMenuItem";
+            this.angularToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.angularToolStripMenuItem.Text = "Angular";
+            this.angularToolStripMenuItem.Click += new System.EventHandler(this.angularToolStripMenuItem_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 437);
+            this.ClientSize = new System.Drawing.Size(1044, 546);
             this.Controls.Add(this.model1);
             this.Controls.Add(this.menuStrip1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1181,6 +1226,11 @@
         private System.Windows.Forms.ToolStripMenuItem customDataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customData추가ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customData보기ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 치수ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem linearToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem radiusToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem diametricToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem angularToolStripMenuItem;
     }
 }
 

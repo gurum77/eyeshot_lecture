@@ -789,6 +789,9 @@ namespace eyeshot강의
         // 2d view
         private void dViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // origin 심볼 숨김
+            model1.ActiveViewport.OriginSymbol.Visible = false;
+
             // 원근법 미적용
             model1.ActiveViewport.Camera.ProjectionMode = projectionType.Orthographic;
 
@@ -814,6 +817,9 @@ namespace eyeshot강의
         // 3d view
         private void dViewToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            // origin 심볼 표시
+            model1.ActiveViewport.OriginSymbol.Visible = true;
+
             // 원근법 적용
             model1.ActiveViewport.Camera.ProjectionMode = projectionType.Perspective;
 
@@ -864,6 +870,30 @@ namespace eyeshot강의
             }
 
             MessageBox.Show($"{count}개의 객체에 custom data가 있습니다.");
+        }
+
+        private void linearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DimensionCreator dc = new DimensionCreator();
+            dc.CreateLinearDim(model1);
+        }
+
+        private void radiusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DimensionCreator dc = new DimensionCreator();
+            dc.CreateRadialDim(model1);
+        }
+
+        private void diametricToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DimensionCreator dc = new DimensionCreator();
+            dc.CreateDiametricDim(model1);
+        }
+
+        private void angularToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DimensionCreator dc = new DimensionCreator();
+            dc.CreateAngularDim(model1);
         }
     }
 }
