@@ -1,15 +1,14 @@
 ﻿using devDept.Eyeshot;
 using devDept.Eyeshot.Entities;
+using devDept.Eyeshot.Fem;
 using devDept.Eyeshot.Translators;
 using devDept.Geometry;
 using devDept.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-using System.Xml.XPath;
 
 namespace eyeshot강의
 {
@@ -247,7 +246,7 @@ namespace eyeshot강의
             Mesh arrow = Mesh.CreateArrow(5, 50, 10, 15, 16, Mesh.natureType.Smooth);
             // 객체 편집(변형) 정보
             double rad = Utility.DegToRad(90);
-            Rotation rotation = new Rotation(rad, new Vector3D(0, 0, 1), new Point3D(0, 0, 0));  // 회전
+            devDept.Geometry.Rotation rotation = new devDept.Geometry.Rotation(rad, new Vector3D(0, 0, 1), new Point3D(0, 0, 0));  // 회전
             Translation translation = new Translation(10, 10, 0);   // 이동
             Scaling scaling = new Scaling(2);   // 확대
             // 조합
@@ -388,7 +387,7 @@ namespace eyeshot강의
         {
             CurveToMesh cm = new CurveToMesh();
             cm.CreateExtrudeMesh(model1);
-                   
+
         }
 
 
@@ -424,7 +423,7 @@ namespace eyeshot강의
             rc.CreateRoundedRectangleRegion(model1);
         }
 
-    
+
         private void ellipseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegionCreator rc = new RegionCreator();
@@ -514,7 +513,7 @@ namespace eyeshot강의
             //model1.Entities.Add(Solid.CreateCylinder(10, 30, 10));
             model1.Entities.Add(Brep.CreateCylinder(10, 30));
             model1.Invalidate();
-            
+
         }
 
         #region File
@@ -527,10 +526,12 @@ namespace eyeshot강의
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // 파일명 입력 dialog
-            SaveFileDialog dlg = new SaveFileDialog();
-            dlg.Filter = "eyeshot 파일 (*.eye)|*.eye";
+            SaveFileDialog dlg = new SaveFileDialog
+            {
+                Filter = "eyeshot 파일 (*.eye)|*.eye"
+            };
 
-            if(dlg.ShowDialog() == DialogResult.OK)
+            if (dlg.ShowDialog() == DialogResult.OK)
             {
                 WriteFileParams wp = new WriteFileParams(model1);
                 WriteFile wf = new WriteFile(wp, dlg.FileName);
@@ -541,7 +542,7 @@ namespace eyeshot강의
                 // 메세지 표시
                 MessageBox.Show("저장 완료");
             }
-            
+
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -587,15 +588,17 @@ namespace eyeshot강의
         private void model1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             // 마우스 아래에 있는 뭔가(객체, 라벨등..)을 찾음.
-            var something = model1.GetItemUnderMouseCursor(e.Location);
+            devDept.Eyeshot.Environment.SelectedItem something = model1.GetItemUnderMouseCursor(e.Location);
             if (something == null)
+            {
                 return;
+            }
 
             // 뭔가의 아이템이 객체라면?
             if (something.Item is Entity)
             {
                 // 객체 리스트에 뭔가의 아이템을 객체로 변환해서 추가
-                var entities = new List<Entity>();
+                List<Entity> entities = new List<Entity>();
                 Entity ent = something.Item as Entity;
                 entities.Add(ent);
 
@@ -610,7 +613,7 @@ namespace eyeshot강의
 
         private void model1_MouseDown(object sender, MouseEventArgs e)
         {
-            if(e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Right)
             {
                 // 편집툴이 보이는 상태라면 적용하고 갱신
                 if (model1.ObjectManipulator.Visible)
@@ -661,7 +664,7 @@ namespace eyeshot강의
 
         private void 선택ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach(var ent in model1.Entities)
+            foreach (Entity ent in model1.Entities)
             {
                 ent.Selected = true;
             }
@@ -670,7 +673,7 @@ namespace eyeshot강의
 
         private void 선택해제ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach(var ent in model1.Entities)
+            foreach (Entity ent in model1.Entities)
             {
                 ent.Selected = false;
             }
@@ -726,9 +729,9 @@ namespace eyeshot강의
             model1.DoWork(cd);
 
             // 충돌체크 된 객체를 선택
-            for(int i = 0; i < cd.Result.Count; ++i)
+            for (int i = 0; i < cd.Result.Count; ++i)
             {
-                var result = cd.Result[i];
+                CollisionDetection2D.CollisionResult result = cd.Result[i];
                 result.CollidedEntities.Item1.Entity.Selected = true;
                 result.CollidedEntities.Item2.Entity.Selected = true;
             }
@@ -810,7 +813,7 @@ namespace eyeshot강의
 
             // wireframe 모드로 변경
             model1.ActiveViewport.DisplayMode = displayType.Wireframe;
-            
+
             model1.ActiveViewport.Invalidate();
         }
 
@@ -830,7 +833,7 @@ namespace eyeshot강의
             model1.ActiveViewport.Background.TopColor = Color.Blue;
             model1.ActiveViewport.Background.BottomColor = Color.White;
 
-    
+
             // 삼차원 보기로 변경
             model1.ActiveViewport.SetView(viewType.Trimetric);
 
@@ -843,11 +846,11 @@ namespace eyeshot강의
             model1.ActiveViewport.Invalidate();
         }
 
-     
+
 
         private void customData추가ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach(var ent in model1.Entities)
+            foreach (Entity ent in model1.Entities)
             {
                 ent.EntityData = "custom data가 있습니다.";
             }
@@ -857,12 +860,14 @@ namespace eyeshot강의
 
         private void customData보기ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
             int count = 0;
-            foreach(var ent in model1.Entities)
+            foreach (Entity ent in model1.Entities)
             {
                 if (ent.EntityData == null)
+                {
                     continue;
+                }
 
                 count++;
 
@@ -894,6 +899,187 @@ namespace eyeshot강의
         {
             DimensionCreator dc = new DimensionCreator();
             dc.CreateAngularDim(model1);
+        }
+
+        private void xY평면ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CircleCreator cc = new CircleCreator();
+            cc.CreateCircleOnXYPlane(model1);
+        }
+
+        private void yZ평면ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CircleCreator cc = new CircleCreator();
+            cc.CreateCircleOnYZPlane(model1);
+        }
+
+        private void xZ평면ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CircleCreator cc = new CircleCreator();
+            cc.CreateCircleOnXZPlane(model1);
+        }
+
+        private void block등록ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BlockReferenceManager brm = new BlockReferenceManager();
+            brm.RegisterBlockByAllEntities(model1);
+        }
+
+        private void block사용ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BlockReferenceManager brm = new BlockReferenceManager();
+            brm.UseBlock(model1);
+        }
+
+        private void vertexToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            model1.ShowVertices = !model1.ShowVertices;
+            model1.Invalidate();
+        }
+
+        private void normalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            model1.ShowNormals = !model1.ShowNormals;
+            model1.Invalidate();
+
+
+        }
+
+        private void vertexIndexToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            model1.ShowVertexIndices = !model1.ShowVertexIndices;
+            model1.Invalidate();
+
+
+
+        }
+
+        private void curveDirectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            model1.ShowCurveDirection = !model1.ShowCurveDirection;
+            model1.Invalidate();
+
+        }
+
+        private void fpsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            model1.ShowFps = !model1.ShowFps;
+            model1.Invalidate();
+        }
+
+        private void 그림자OnOffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (model1.Rendered.ShadowMode == shadowType.None)
+            {
+                model1.Rendered.ShadowMode = shadowType.Planar;
+            }
+            else
+            {
+                model1.Rendered.ShadowMode = shadowType.None;
+            }
+            model1.Invalidate();
+        }
+
+ 
+        private void 생성ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FastPointCloudManager fpcm = new FastPointCloudManager();
+            fpcm.CreateFastPointCloud(model1);
+        }
+
+        private void 거리계산ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FastPointCloudManager fpcm = new FastPointCloudManager();
+            fpcm.ComputeDistance(model1);
+        }
+
+        private void delaunayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int rows = 100;
+            int cols = 100;
+            Point3D[] points = new Point3D[rows * cols];
+
+            int min = -2;
+            int max = 2;
+
+            int minxy = -1000;
+            int maxxy = 1000;
+            Random random = new Random();
+            int index = 0;
+            for(int i = 0; i < rows; ++i)
+            {
+                for(int j = 0; j < cols; ++j)
+                {
+                    points[index] = new Point3D(random.Next(minxy, maxxy), random.Next(minxy, maxxy), random.Next(min, max));
+                    index++;
+                }
+            }
+
+            Mesh tin = UtilityEx.Triangulate(points, Mesh.natureType.RichSmooth);
+            if(tin != null)
+            {
+                model1.Entities.Add(tin, Color.YellowGreen);
+            }
+        }
+
+        private void 생성ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Line l1 = new Line(0, 0, 100, 0);
+            Line l2 = new Line(100, 0, 100, 30);
+            Line l3 = new Line(100, 30, 80, 30);
+            Arc a1 = new Arc(80, 50, 0, 20, Utility.DegToRad(180), Utility.DegToRad(270));
+            Line l4 = new Line(60, 50, 60, 80);
+            Line l5 = new Line(60, 80, 30, 80);
+            Line l6 = new Line(30, 80, 30, 31);
+            Arc a2 = new Arc(29, 31, 0, 1, Utility.DegToRad(270), Utility.DegToRad(360));
+            Line l7 = new Line(29, 30, 26, 30);
+            Arc a3 = new Arc(26, 31, 0, 1, Utility.DegToRad(180), Utility.DegToRad(270));
+            Line l8 = new Line(25, 31, 25, 80);
+
+            Line l9 = new Line(25, 80, 15, 80);
+            Line l10 = new Line(15, 80, 15, 31);
+            Arc a4 = new Arc(14, 31, 0, 1, Utility.DegToRad(270), Utility.DegToRad(360));
+            Line l11 = new Line(14, 30, 11, 30);
+            Arc a5 = new Arc(11, 31, 0, 1, Utility.DegToRad(180), Utility.DegToRad(270));
+            Line l12 = new Line(10, 31, 10, 80);
+            Line l13 = new Line(10, 80, 0, 80);
+            Line l14 = new Line(0, 80, 0, 0);
+
+            Circle c1 = new Circle(20, 15, 0, 5);
+            Circle c2 = new Circle(35, 15, 0, 5);
+            Circle c3 = new Circle(50, 15, 0, 5);
+            Circle c4 = new Circle(65, 15, 0, 5);
+
+            devDept.Eyeshot.Entities.Region reg = new devDept.Eyeshot.Entities.Region(new ICurve[]{ new CompositeCurve(l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, a1, a2, a3, a4, a5), c1,
+                c2, c3, c4}, Plane.XY);
+
+            Mesh m = UtilityEx.Triangulate(reg, 3);
+
+            Material copper = Material.Copper;
+            copper.ElementThickness = 6;
+            copper.ElementType = elementType.PlaneStress;
+
+            FemMesh fMesh = m.ConvertToFemMesh(copper, true);
+
+            fMesh.FixAll(new Point3D(0, 0), new Point3D(100, 0), .1);
+
+            fMesh.SetPressure(new Point3D(45, 80), new Point3D(55, 80), .1, 50);
+
+            model1.Entities.Add(fMesh);
+
+            model1.Invalidate();
+
+            Solver s1 = new Solver(fMesh);
+            //Simulation sim = new Simulation();
+            model1.DoWork(s1);
+            model1.Invalidate();
+
+            fMesh.PlotMode = FemMesh.plotType.U;
+            fMesh.NodalAverages = true;
+            fMesh.ComputePlot(model1, model1.ActiveViewport.Legends[0]);
+            model1.ZoomFit();
+            
+
         }
     }
 }
