@@ -1022,7 +1022,7 @@ namespace eyeshot강의
             }
         }
 
-        private void 생성ToolStripMenuItem1_Click(object sender, EventArgs e)
+        void MakeFemMeshSample()
         {
             Line l1 = new Line(0, 0, 100, 0);
             Line l2 = new Line(100, 0, 100, 30);
@@ -1063,14 +1063,13 @@ namespace eyeshot강의
 
             fMesh.FixAll(new Point3D(0, 0), new Point3D(100, 0), .1);
 
-            fMesh.SetPressure(new Point3D(45, 80), new Point3D(55, 80), .1, 50);
+            fMesh.SetForce(new Point3D(0, 70), new Point3D(50, 70), .1, new Vector3D(-1, 0, 0));
 
             model1.Entities.Add(fMesh);
 
             model1.Invalidate();
 
             Solver s1 = new Solver(fMesh);
-            //Simulation sim = new Simulation();
             model1.DoWork(s1);
             model1.Invalidate();
 
@@ -1078,8 +1077,84 @@ namespace eyeshot강의
             fMesh.NodalAverages = true;
             fMesh.ComputePlot(model1, model1.ActiveViewport.Legends[0]);
             model1.ZoomFit();
-            
+        }
 
+        void MakeFemMeshSample2()
+        {
+            FemMesh fMesh = FemMesh.CreateRectangle(100, 200);
+            FemMesh.CreateRectangleQuad4(200, 200, 30, 30, Material.Copper, out fMesh);
+            fMesh.FixAll(new Point3D(0, 0), new Point3D(200, 0), .1);
+            fMesh.SetForce(new Point3D(100, 200), new Point3D(120, 200), .1, new Vector3D(0, -100, 0));
+
+            model1.Entities.Add(fMesh);
+
+            model1.Invalidate();
+
+            Solver s1 = new Solver(fMesh);
+            model1.DoWork(s1);
+            model1.Invalidate();
+
+            fMesh.PlotMode = FemMesh.plotType.U;
+            fMesh.NodalAverages = true;
+            fMesh.ComputePlot(model1, model1.ActiveViewport.Legends[0]);
+            model1.ZoomFit();
+        }
+        private void 생성ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Mesh mesh = null;
+            foreach(var ent in model1.Entities)
+            {
+                if(ent is Mesh)
+                {
+                    mesh = ent as Mesh;
+                    break;
+                }
+            }
+
+            if (mesh == null)
+                return;
+
+            FemMesh fMesh = mesh.ConvertToFemMesh(Material.Copper, false);
+            if (fMesh == null)
+                return;
+
+            model1.Entities.Remove(mesh);
+            
+            double zTop = 10;
+            double y = 0;
+            double xMin = 5;
+            double xMax = 25;
+            double xGap = 2;
+            // fixall
+
+            fMesh.FixAll(new Point3D(xMin, y, 0), new Point3D(xMax, y, 0), .1);
+            fMesh.SetForce(new Point3D(xMin + xGap, y, zTop), new Point3D(xMax - xGap, y, zTop), .1, new Vector3D(0, 0, -10000));
+            model1.Entities.Add(fMesh);
+            model1.Invalidate();
+
+            Solver s1 = new Solver(fMesh, 0.001);
+            model1.DoWork(s1);
+            model1.Invalidate();
+
+            fMesh.PlotMode = FemMesh.plotType.U;
+            fMesh.NodalAverages = true;
+            fMesh.ComputePlot(model1, model1.ActiveViewport.Legends[0]);
+            model1.ZoomFit();
+
+
+            Circle fixall1 = new Circle(new Point3D(xMin, y, 0), 3);
+            Circle fixall2 = new Circle(new Point3D(xMax, y, 0), 3);
+
+            Circle force1 = new Circle(new Point3D(xMin + xGap, y, zTop), 2);
+            Circle force2 = new Circle(new Point3D(xMax - xGap, y, zTop), 2);
+
+            model1.Entities.Add(fixall1, Color.Red);
+            model1.Entities.Add(fixall2, Color.Red);
+            model1.Entities.Add(force1, Color.Blue);
+            model1.Entities.Add(force2, Color.Blue);
+            model1.ZoomFit();
+            model1.Invalidate();
+            
         }
     }
 }
