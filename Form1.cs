@@ -1081,80 +1081,62 @@ namespace eyeshot강의
 
         void MakeFemMeshSample2()
         {
-            FemMesh fMesh = FemMesh.CreateRectangle(100, 200);
+            // rectangle FemMesh 생성
+            FemMesh fMesh = new FemMesh();
             FemMesh.CreateRectangleQuad4(200, 200, 30, 30, Material.Copper, out fMesh);
+
+            // 고정점 설정
             fMesh.FixAll(new Point3D(0, 0), new Point3D(200, 0), .1);
+
+            // 힘 적용
             fMesh.SetForce(new Point3D(100, 200), new Point3D(120, 200), .1, new Vector3D(0, -100, 0));
 
+            // fem mesh 객체 추가
             model1.Entities.Add(fMesh);
-
             model1.Invalidate();
 
+            // 솔버에 fem mesh를 추가해서 해석.
             Solver s1 = new Solver(fMesh);
             model1.DoWork(s1);
             model1.Invalidate();
 
+            // fem mesh plot mode 설정
             fMesh.PlotMode = FemMesh.plotType.U;
             fMesh.NodalAverages = true;
+
+            // 등고선 계산해서 표시하고, legend 설정
             fMesh.ComputePlot(model1, model1.ActiveViewport.Legends[0]);
-            model1.ZoomFit();
         }
         private void 생성ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Mesh mesh = null;
+            MakeFemMeshSample2();
+        }
+
+        private void startToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // 화면에 있는 객체를 block으로 만듦
+            Block block = new Block("block");
             foreach(var ent in model1.Entities)
             {
-                if(ent is Mesh)
-                {
-                    mesh = ent as Mesh;
-                    break;
-                }
+                block.Entities.Add(ent.Clone() as Entity);
             }
+            model1.Blocks.Add(block);
 
-            if (mesh == null)
-                return;
+            // 화면에 있는 객체는 삭제
+            model1.Entities.Clear();
 
-            FemMesh fMesh = mesh.ConvertToFemMesh(Material.Copper, false);
-            if (fMesh == null)
-                return;
-
-            model1.Entities.Remove(mesh);
-            
-            double zTop = 10;
-            double y = 0;
-            double xMin = 5;
-            double xMax = 25;
-            double xGap = 2;
-            // fixall
-
-            fMesh.FixAll(new Point3D(xMin, y, 0), new Point3D(xMax, y, 0), .1);
-            fMesh.SetForce(new Point3D(xMin + xGap, y, zTop), new Point3D(xMax - xGap, y, zTop), .1, new Vector3D(0, 0, -10000));
-            model1.Entities.Add(fMesh);
+            // Animation하는 객체에 block을 넣어서 추가
+            TranslatingAlongX br = new TranslatingAlongX("block");
+            model1.Entities.Add(br);
             model1.Invalidate();
 
-            Solver s1 = new Solver(fMesh, 0.001);
-            model1.DoWork(s1);
-            model1.Invalidate();
+            // Animation 시작(인터벌 100)
+            model1.StartAnimation(100);
+        }
 
-            fMesh.PlotMode = FemMesh.plotType.U;
-            fMesh.NodalAverages = true;
-            fMesh.ComputePlot(model1, model1.ActiveViewport.Legends[0]);
-            model1.ZoomFit();
-
-
-            Circle fixall1 = new Circle(new Point3D(xMin, y, 0), 3);
-            Circle fixall2 = new Circle(new Point3D(xMax, y, 0), 3);
-
-            Circle force1 = new Circle(new Point3D(xMin + xGap, y, zTop), 2);
-            Circle force2 = new Circle(new Point3D(xMax - xGap, y, zTop), 2);
-
-            model1.Entities.Add(fixall1, Color.Red);
-            model1.Entities.Add(fixall2, Color.Red);
-            model1.Entities.Add(force1, Color.Blue);
-            model1.Entities.Add(force2, Color.Blue);
-            model1.ZoomFit();
-            model1.Invalidate();
-            
+        private void stopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            model1.StopAnimation();
         }
     }
 }
